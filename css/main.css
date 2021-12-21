@@ -1,5 +1,26 @@
 .ground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     background: rgba(6, 32, 69, 1);
+}
+.year-con {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    /* width: 100%; */
+    height: 20vh;
+}
+.year-con .year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.333vw;
+    font-size: 5rem;
+    color: white;
+}
+.year-con .year.selected {
+    font-size: 8rem;
 }

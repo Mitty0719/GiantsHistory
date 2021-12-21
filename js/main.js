@@ -1,13 +1,14 @@
+const currentYear = new Date().getFullYear();
 
+const yearProp = {
+    yearCon: document.querySelector('.year-con'),
+    yearArr: []
+}
 
 const setYear = () => {
-    const yearCon = document.querySelector('.year-con');
-    const time = new Date();
-    for(let year = 1982; year <= time.getFullYear(); year++){
-        const el = document.createElement('li');
-        el.classList.add('year');
-        el.innerText = year;
-        yearCon.appendChild(el);
+    for(let year = 1982; year <= currentYear; year++){
+        yearProp.yearArr.push(new Year(year));
+        // console.log(year);
     }
 }
 

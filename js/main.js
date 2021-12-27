@@ -1,7 +1,7 @@
 const currentYear = new Date().getFullYear();
 
 const yearProp = {
-    yearCon: document.querySelector('.year-con'),
+    yearCon: document.querySelector('.year-list'),
     yearArr: []
 }
 

@@ -1,0 +1,16 @@
+.news-con{
+    display: grid;
+    width: 100%;
+    height: 90%;
+    background: red;
+    overflow: scroll;
+}
+.issue-con{
+    background: blue;
+}
+.lineup-con{
+    background: green;
+}
+.keyplayer-con{
+    background: yellow;
+}

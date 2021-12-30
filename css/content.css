@@ -1,9 +1,10 @@
 .news-con{
-    display: grid;
-    width: 100%;
-    height: 90%;
-    background: red;
-    overflow: scroll;
+    display: inline-flex;
+    flex-direction: column;
+}
+.news-con section{
+    width: 100vw;
+    height: 100vh;
 }
 .issue-con{
     background: blue;
@@ -13,4 +14,7 @@
 }
 .keyplayer-con{
     background: yellow;
+}
+.inoutplayer-con{
+    background: red;
 }

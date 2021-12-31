@@ -9,10 +9,10 @@ class Year {
     }
 
     createYearElem(){
-        const el = document.createElement('li');
-        el.className = 'year';
-        el.innerText = this.year;
-        yearProp.yearCon.appendChild(el);
+        const elem = document.createElement('li');
+        elem.className = 'year';
+        elem.innerText = this.year;
+        yearProp.yearCon.appendChild(elem);
     }
 
 }

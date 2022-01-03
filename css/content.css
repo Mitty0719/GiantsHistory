@@ -109,6 +109,46 @@
 .lineup-img .lineup-img-svg{
     align-items: center;
 }
+.lineup-con .lineup-position-con{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: blanchedalmond;
+    z-index: 99;
+}
+.lineup-position-con .position-inner{
+    position: absolute;
+    display: flex;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: red;
+}
+.position-inner .position-name{
+    font-size: 3rem;
+}
+.position-inner .player-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.position-inner .player-list .player{
+    width: 33.333%;
+    flex: 1 0 25%;
+}
+.player .player-image{
+    
+}
+
+
+
+
+
+
 .keyplayer-con{
     background: yellow;
 }

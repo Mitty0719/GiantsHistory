@@ -6,6 +6,18 @@
     /* width: 100vw;
     height: 100vh; */
 }
+.inner-wrap{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.section-title{
+    font-size: 3rem;
+    height: 50px;
+}
 
 .main-con{
     width: 100vw;
@@ -51,16 +63,16 @@
 }
 
 .issue-con{
-    display: flex;
+    position: relative;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     width: 100vw;
     height: 100vh;
 }
-.issue-con .issue-inner{
+.issue-con .issue-content-con{
     display: flex;
-    width: 80%;
-    height: 80%;
+    height: 100%;
     gap: 50px;
 }
 .issue-img-con{
@@ -94,64 +106,89 @@
 .lineup-con{
     display: inline-block;
     position: relative;
-}
-.lineup-con .lineup-title{
-    font-size: 3rem;
+    height: 100vh;
 }
 .lineup-img{
+    width: 100%;
+    height: 100%;
+}
+.lineup-img .lineup-img-svg{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 80%;
-    height: 80%;
     transform: translate(-50%, -50%);
-}
-.lineup-img .lineup-img-svg{
     align-items: center;
+    height: 100%;
 }
 .lineup-con .lineup-position-con{
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: blanchedalmond;
+    background: white;
     z-index: 99;
 }
-.lineup-position-con .position-inner{
-    position: absolute;
-    display: flex;
-    width: 80%;
-    height: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: red;
+.lineup-position-con .player-back-btn{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    font-size: 2rem;
 }
+
 .position-inner .position-name{
+    height: 10%;
     font-size: 3rem;
 }
-.position-inner .player-list{
+.position-inner .position-player{
+    display: flex;
+    height: 90%;
+    gap: 5%;
+}
+.position-player .player-list{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    width: 50%;
+    height: 100%;
+    overflow-y: scroll;
 }
-.position-inner .player-list .player{
-    width: 33.333%;
-    flex: 1 0 25%;
+.position-player .player-list .player{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 30%;
+    background: white;
 }
 .player .player-image{
+    width: 100%;
+}
+.player .player-image img{
+    width: 100%;
+}
+.player .player-name{
+    width: 90%;
+}
+.player .player-no{
+    width: 10%;
+}
+.player .player-info{
     
 }
 
-
-
-
-
-
-.keyplayer-con{
-    background: yellow;
+.position-player .player-picture{
+    width: 50%;
+    height: 100%;
+    background: white;
+    overflow: hidden;
 }
-.inoutplayer-con{
+
+
+.rank-con{
+    position: relative;
+    height: 100vh;
     background: red;
 }

@@ -16,3 +16,12 @@ class Year {
     }
 
 }
+
+class Player {
+    constructor(){
+        this.name = '이대호';
+        this.position = '1B';
+    }
+    createPlayer(){
+    }
+}

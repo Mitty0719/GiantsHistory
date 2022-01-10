@@ -22,5 +22,4 @@ const init = () => {
 
 window.onload = () => {
     init();
-    mainImgEffect();
 }

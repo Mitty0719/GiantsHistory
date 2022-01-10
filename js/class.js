@@ -12,7 +12,7 @@ class Year {
         const elem = document.createElement('li');
         elem.className = 'year';
         elem.innerText = this.year;
-        yearProp.yearCon.appendChild(elem);
+        yearCon.appendChild(elem);
     }
 
 }
@@ -21,7 +21,15 @@ class Player {
     constructor(){
         this.name = '이대호';
         this.position = '1B';
+        this.init();
+    }
+    init(){
+        this.createPlayer();
     }
     createPlayer(){
+        const elem = document.createElement('div');
+        elem.className = 'player';
+        elem.innerText = this.name;
+        playerGround.appendChild(elem);
     }
 }

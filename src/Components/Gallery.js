@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function Gallery(){
     return (
-        <div className="gallery-ground ground"></div>
+        <div className='gallery-ground ground'>Gallery</div>
     );
 }
 

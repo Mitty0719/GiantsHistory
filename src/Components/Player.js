@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function Player(){
     return (
-        <div className="player-ground ground"></div>
+        <div className='player-ground ground'>Player</div>
     );
 }
 

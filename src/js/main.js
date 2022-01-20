@@ -30,11 +30,14 @@ function setLayout(){
 }
 
 export function moveScroll(pageState){
-    let yLocation = 0;
-    for(let i = 0; i < pageState; i++){
-        yLocation += sectionInfo[i].sectionHeight;
-    }
-    window.scrollTo(0, yLocation);
+    setTimeout(()=>{
+        let yLocation = 0;
+        for(let i = 0; i < pageState; i++){
+            yLocation += sectionInfo[i].sectionHeight;
+        }
+        window.scrollTo(0, yLocation);
+
+    }, 100);
 }
 
 window.addEventListener('load', ()=>{

@@ -18,7 +18,7 @@ function App() {
         </ul>
         <div className='main-ground ground'>
             <div className='main-logo'>
-                <div className='btn-to-issue' onClick={() => { setPageState(1); moveScroll(pageState);}}>이슈로</div>
+                <div className='btn-to-issue' onClick={() => { setPageState(1); moveScroll(pageState); }}>이슈로</div>
                 <div className='btn-to-player' onClick={() => { setPageState(2); moveScroll(pageState); }}>플레이어로</div>
                 <div className='btn-to-gallery' onClick={() => { setPageState(3); moveScroll(pageState); }}>갤러리로</div>
             </div>
@@ -30,5 +30,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

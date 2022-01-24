@@ -1,8 +1,44 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
 .ground {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background: beige;
+}
+
+.issue-ground {
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.issue-ground .issue-con {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.issue-img-con {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.issue-img-con img{
+    width: 100%;
+}
+.issue-text-con {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+.issue-text-con h1{
+    font-size: 2rem;
+    padding: 20px;
+}
+.issue-text-con p{
+    font-size: 1.2rem;
+    padding: 0 20px 20px;
+    line-height: 2rem;
 }

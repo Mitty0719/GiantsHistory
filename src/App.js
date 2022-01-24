@@ -4,11 +4,13 @@ import './css/common.css';
 import Issue from './Components/Issue';
 import Player from './Components/Player';
 import Gallery from './Components/Gallery';
-import { moveScroll } from './js/main';
+import { moveScroll, getPlayers, getIssues } from './js/main';
 
 function App() {
-
+  let [year, setYear] = useState(2021);
   let [pageState, setPageState] = useState(0);
+  let [players, setPlayers] = useState(getPlayers(year));
+  let [isuues, setIssues] = useState(getIssues(year));
 
   return (
     <div className='App'>
@@ -23,8 +25,8 @@ function App() {
                 <div className='btn-to-gallery' onClick={() => { setPageState(3); moveScroll(pageState); }}>갤러리로</div>
             </div>
         </div>
-        <Issue></Issue>
-        <Player></Player>
+        <Issue issues={isuues}></Issue>
+        <Player players={players}></Player>
         <Gallery></Gallery>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { React } from 'react';
 import players from '../data/players.json'
+import issues from '../data/issue.json'
 
 let sectionInfo = [
     {
@@ -50,6 +51,12 @@ export function moveScroll(pageState){
 
         scrollAnimation();
     }, 100);
+}
+export function getPlayers(year){
+    return players[year];
+}
+export function getIssues(year){
+    return issues[year];
 }
 
 window.addEventListener('load', ()=>{

@@ -24,10 +24,17 @@ let sectionInfo = [
         sectionHeight: 0,
     },
 ];
+let currentPageState = 0;
 let currentY = 0; // 현재스크롤 위치
 let positionY = 0; // 이동해야하는 스크롤 위치
 let acc = 0.05; // 스크롤 속도
 
+export function getPlayers(year){
+    return players[year];
+}
+export function getIssues(year){
+    return issues[year];
+}
 function setLayout(){
     for(let i = 0; i < sectionInfo.length; i++){
         sectionInfo[i].sectionHeight = sectionInfo[i].sectionRatio * window.innerHeight;
@@ -40,9 +47,11 @@ function scrollAnimation(){
 
     if(positionY - currentY < 1){
         cancelAnimationFrame(reqId);
+        executeSectionAnimation();
     }
 }
 export function moveScroll(pageState){
+    currentPageState = pageState;
     setTimeout(()=>{
         for(let i = 0; i < pageState; i++){
             positionY += sectionInfo[i].sectionHeight;
@@ -52,11 +61,19 @@ export function moveScroll(pageState){
         scrollAnimation();
     }, 100);
 }
-export function getPlayers(year){
-    return players[year];
+
+export function showIssueText(){
+    const issueText = document.querySelectorAll('.issue-text-con span');
+    issueText.forEach((text) => {
+        text.classList.remove('issue-text-effect-off');
+        text.classList.add('issue-text-effect-on');
+        text.style.transitionDelay = Math.random() * 2.5 + 's';
+    });
 }
-export function getIssues(year){
-    return issues[year];
+function executeSectionAnimation(){
+    if(currentPageState === 1){
+        showIssueText();
+    }
 }
 
 window.addEventListener('load', ()=>{

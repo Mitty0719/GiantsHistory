@@ -97,15 +97,15 @@ function recycleIssueImg(){
         if(onIndex > issueImgs.length - 1){
             onIndex = 0;
         }
-    }, 4000)
+    }, 3000);
 }
 function getRandomSign(){
     return (Math.random() * 2 > 1 ? 1 : -1);
 }
 function spreadPlayer(){
     const players = document.querySelectorAll('.player-con .player');
-    const rangeX = window.innerWidth / 2 - 20;
-    const rangeY = window.innerHeight / 2 - 20;
+    const rangeX = window.innerWidth / 2 - 150;
+    const rangeY = window.innerHeight / 2 - 150;
     players.forEach((player)=>{
         player.style.transform = `translate(${Math.random() * rangeX * getRandomSign()}px, ${Math.random() * rangeY * getRandomSign()}px)`;
     });

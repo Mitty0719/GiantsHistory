@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './css/reset.css';
 import './css/common.css';
 import Issue from './Components/Issue';
@@ -7,10 +7,13 @@ import Gallery from './Components/Gallery';
 import { moveScroll, getPlayers, getIssues } from './js/main';
 
 function App() {
-  let [year, setYear] = useState(2021);
+  useEffect(()=>{
+    moveScroll(pageState);
+  });
+  
   let [pageState, setPageState] = useState(0);
-  let [players, setPlayers] = useState(getPlayers(year));
-  let [isuues, setIssues] = useState(getIssues(year));
+  let [players, setPlayers] = useState(getPlayers());
+  let [isuues, setIssues] = useState(getIssues());
 
   return (
     <div className='App'>
@@ -20,9 +23,9 @@ function App() {
         </ul>
         <div className='main-ground ground'>
             <div className='main-logo'>
-                <div className='btn-to-issue' onClick={() => { setPageState(1); moveScroll(pageState); }}>이슈로</div>
-                <div className='btn-to-player' onClick={() => { setPageState(2); moveScroll(pageState); }}>플레이어로</div>
-                <div className='btn-to-gallery' onClick={() => { setPageState(3); moveScroll(pageState); }}>갤러리로</div>
+                <div className='btn-to-issue' onClick={() => { setPageState(1);}}>이슈로</div>
+                <div className='btn-to-player' onClick={() => { setPageState(2);}}>플레이어로</div>
+                <div className='btn-to-gallery' onClick={() => { setPageState(3);}}>갤러리로</div>
             </div>
         </div>
         <Issue issues={isuues}></Issue>
@@ -32,4 +35,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

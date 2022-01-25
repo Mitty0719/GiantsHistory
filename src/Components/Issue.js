@@ -1,21 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function Issue(props){
+    let [currentIssue, setCurrentIssue] = useState(0);
+    
     return (
         <div className='issue-ground ground'>
-            {props.issues.map((issue, index)=>{
-                return (
-                    <div className='issue-con' key={index}>
-                        <figure className='issue-img-con'>
-                            <img src={'/images/issue/'+ issue.img + '.png'} alt={issue.title}></img>
-                        </figure>
-                        <div className='issue-text-con'>
-                            <h1>{issue.title.split('').map((char, index)=>{return <span className='issue-text-effect-off' key={index}>{char}</span>})}</h1>
-                            <p>{issue.content}</p>
-                        </div>
+            <div className='issue-list'>
+                <div className='issue-con'>
+                    <figure className='issue-img-con'>
+                        {props.issues.img.map((image, index)=>{
+                            return <img src={'/images/issue/'+ image + '.png'} alt={props.issues.title} key={index}></img>
+                        })}
+                    </figure>
+                    <div className='issue-text-con'>
+                        <h1 className='title'>{props.issues.title.split('').map((char, index)=>{return <span className='issue-text-effect-off' key={index}>{char}</span>})}</h1>
+                        <p className='content'>{props.issues.content.split('').map((char, index)=>{return <span className='issue-text-effect-off' key={index}>{char}</span>})}</p>
                     </div>
-                )
-            })}
+                </div>
+            </div>
         </div>
     );
 }

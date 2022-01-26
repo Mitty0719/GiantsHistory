@@ -15,6 +15,9 @@ function Years(props){
             <ul className='year-con' onClick={()=>{props.setPageState(1);}}>
                 {years.map((year, index)=>{ return <li className='year' key={index} onClick={()=>{props.setCurrentYear(year)}}>{year}</li>})}
             </ul>
+            <figure className="year-logo-img">
+                <img src="/images/logo/logo-6.svg" alt=""></img>
+            </figure>
         </div>
     )
 }

@@ -118,22 +118,27 @@ body{
     font-size: 1.5rem;
     font-weight: 600;
     -webkit-text-stroke: white 1px;
+    /* -webkit-text-stroke: white 1px; */
 }
 .player-con .player:hover{
     font-size: 3rem;
-    -webkit-text-stroke: red 2px;
+    color: rgb(208, 0, 36);
+    -webkit-text-stroke: rgb(6, 32, 69) 2px;
     z-index: 100;
 }
 .player-con .player .position{
     /* display: none; */
     opacity: 0;
     font-size: 0rem;
-    transition-duration: 2s;
+    transition-duration: 1.5s;
+    -webkit-text-stroke: rgb(6, 32, 69) 2px;
 }
 .player-con .player:hover .position{
     /* display: inline; */
     font-size: 2rem;
     opacity: 1;
+    color: rgb(208, 0, 36);
+    -webkit-text-stroke: rgb(6, 32, 69) 2px;
 }
 
 .btn-home-con{
@@ -155,6 +160,8 @@ body{
 }
 
 .year-ground{
+    position: relative;
+    overflow: hidden;
 }
 .year-con{
     display: flex;
@@ -175,4 +182,15 @@ body{
 .year-con .year:hover{
     background: white;
     color: rgb(6, 32, 69);
+}
+.year-logo-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60vw;
+    transform: translate(20%, 20%);
+    opacity: 0.5;
+}
+.year-logo-img img{
+    width: 100%;
 }

@@ -43,7 +43,7 @@ let currentYear = 2021;
 let currentPageState = 0;
 let currentY = 0; // 현재스크롤 위치
 let positionY = 0; // 이동해야하는 스크롤 위치
-let acc = 0.05; // 스크롤 속도
+let acc = 0.075; // 스크롤 속도
 
 function setYear(year){
     currentYear = year;
@@ -72,25 +72,25 @@ function setHomeBtnOpacity(){
 function setLogoImg(){
     const homeConImg = document.querySelector('.btn-home-con img');
     const logoConImg = document.querySelector('.logo-img-con img');
-    if(currentYear <= 1992){
-        homeConImg.src = logoPath[0];
-        logoConImg.src = logoPath[0];
-    }else if(currentYear <= 1995){
-        homeConImg.src = logoPath[1];
-        logoConImg.src = logoPath[1];
-    }else if(currentYear <= 2002){
-        homeConImg.src = logoPath[2];
-        logoConImg.src = logoPath[2];
-    }else if(currentYear <= 2008){
-        homeConImg.src = logoPath[3];
-        logoConImg.src = logoPath[3];
-    }else if(currentYear <= 2017){
-        homeConImg.src = logoPath[4];
-        logoConImg.src = logoPath[4];
+    
+    homeConImg.src = getYearlyLogo(currentYear);
+    logoConImg.src = getYearlyLogo(currentYear);
+}
+function getYearlyLogo(year){
+    if(year <= 1992){
+        return logoPath[0];
+    }else if(year <= 1995){
+        return logoPath[1];
+    }else if(year <= 2002){
+        return logoPath[2];
+    }else if(year <= 2008){
+        return logoPath[3];
+    }else if(year <= 2017){
+        return logoPath[4];
     }else{
-        homeConImg.src = logoPath[5];
-        logoConImg.src = logoPath[5];
+        return logoPath[5];
     }
+
 }
 function scrollAnimation(){
     currentY = currentY + (positionY - currentY) * acc;
@@ -169,10 +169,15 @@ function executeSectionAnimation(){
         spreadPlayer();
     }
 }
+
 window.addEventListener('load', ()=>{
     const yearCon = document.querySelector('.year-con');
     yearCon.addEventListener('click', (e)=>{
         setYear(e.target.innerText);
+    });
+    yearCon.addEventListener('mouseover', (e)=>{
+        const yearLogoImg = document.querySelector('.year-logo-img img');
+        yearLogoImg.src = getYearlyLogo(e.target.innerText);
     });
 })
 // console.log(sectionInfo[1].objs.issueList);

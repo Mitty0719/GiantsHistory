@@ -7,13 +7,14 @@ import Gallery from './Components/Gallery';
 import { moveScroll, getPlayers, getIssues } from './js/main';
 
 function App() {
-  useEffect(()=>{
-    moveScroll(pageState);
-  });
-  
   let [pageState, setPageState] = useState(0);
   let [players, setPlayers] = useState(getPlayers());
   let [isuues, setIssues] = useState(getIssues());
+
+  useEffect(()=>{
+    moveScroll(pageState);
+  }, [pageState]);
+  
 
   return (
     <div className='App'>

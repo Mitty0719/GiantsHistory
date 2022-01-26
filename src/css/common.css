@@ -153,3 +153,26 @@ body{
     width: 100%;
     height: 100%;
 }
+
+.year-ground{
+}
+.year-con{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background: linear-gradient(180deg, rgb(6, 32, 69), rgb(208, 0, 36))
+}
+.year-con .year{
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    border-bottom: 1px solid white;
+    transition-duration: 1s;
+}
+.year-con .year:hover{
+    background: white;
+    color: rgb(6, 32, 69);
+}

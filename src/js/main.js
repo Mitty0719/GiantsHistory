@@ -18,28 +18,38 @@ let sectionInfo = [
         sectionNum: 1,
         sectionRatio: 1,
         sectionHeight: 0,
+    },
+    {
+        sectionNum: 2,
+        sectionRatio: 1,
+        sectionHeight: 0,
         // objs: {
         //     // issueList: document.querySelector('.issue-list'),
         //     // issueImg: document.querySelector('.issue-img-con img')
         // }
     },
     {
-        sectionNum: 2,
-        sectionRatio: 1,
-        sectionHeight: 0,
-    },
-    {
         sectionNum: 3,
         sectionRatio: 1,
         sectionHeight: 0,
     },
+    {
+        sectionNum: 4,
+        sectionRatio: 1,
+        sectionHeight: 0,
+    },
 ];
-let currentYear = 2019;
+let currentYear = 2021;
 let currentPageState = 0;
 let currentY = 0; // 현재스크롤 위치
 let positionY = 0; // 이동해야하는 스크롤 위치
 let acc = 0.05; // 스크롤 속도
 
+function setYear(year){
+    currentYear = year;
+    setLayout();
+    setLogoImg();
+}
 function getPlayers(){
     return players[currentYear];
 }
@@ -53,7 +63,7 @@ function setLayout(){
 }
 function setHomeBtnOpacity(){
     const homeCon = document.querySelector('.btn-home-con');
-    if(currentPageState === 0){
+    if(currentPageState <= 1){
         homeCon.classList.remove('logo-visible');
     }else{
         homeCon.classList.add('logo-visible');
@@ -62,7 +72,6 @@ function setHomeBtnOpacity(){
 function setLogoImg(){
     const homeConImg = document.querySelector('.btn-home-con img');
     const logoConImg = document.querySelector('.logo-img-con img');
-
     if(currentYear <= 1992){
         homeConImg.src = logoPath[0];
         logoConImg.src = logoPath[0];
@@ -153,17 +162,18 @@ function spreadPlayer(){
 }
 
 function executeSectionAnimation(){
-    if(currentPageState === 1){
+    if(currentPageState === 2){
         showIssueText();
         recycleIssueImg();
-    } else if(currentPageState === 2){
+    } else if(currentPageState === 3){
         spreadPlayer();
     }
 }
-
 window.addEventListener('load', ()=>{
-    setLayout();
-    setLogoImg();
+    const yearCon = document.querySelector('.year-con');
+    yearCon.addEventListener('click', (e)=>{
+        setYear(e.target.innerText);
+    });
 })
 // console.log(sectionInfo[1].objs.issueList);
 

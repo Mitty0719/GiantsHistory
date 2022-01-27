@@ -37,9 +37,9 @@ function App() {
                   <img src='/images/logo/logo-6.svg' alt='logo-img'></img>
                 </figure>
                 <ul className='main-menu-con'>
-                  <li className='btn-to-issue btn-menu' onClick={() => { setPageState(2)}}>ISSUE</li>
-                  <li className='btn-to-player btn-menu' onClick={() => { setPageState(3)}}>PLAYER</li>
-                  <li className='btn-to-gallery btn-menu' onClick={() => { setPageState(4)}}>GALLERY</li>
+                  <li className='btn-to-issue btn-menu' onClick={() => { setPageState(2)}}><h5>ISSUE</h5></li>
+                  <li className='btn-to-player btn-menu' onClick={() => { setPageState(3)}}><h5>PLAYER</h5></li>
+                  <li className='btn-to-gallery btn-menu' onClick={() => { setPageState(4)}}><h5>GALLERY</h5></li>
                 </ul>
             </div>
         </div>

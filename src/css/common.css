@@ -45,12 +45,27 @@ body{
     border-right: 2px solid white;
     border-left: 2px solid white;
 }
+.main-menu-con .btn-menu h5{
+    transition-duration: 1s;
+    cursor: pointer;
+}
+.main-menu-con .btn-menu h5:hover{
+    transform: scale(1.2);
+}
 .btn-year-con{
     position: absolute;
     top: 50px;
     left: 50px;
+    transition-duration: 1s;
+    transform-origin: left top;
+    cursor: pointer;
+}
+.btn-year-con:hover{
+    transform: scale(2);
 }
 .btn-year-con h3{
+    font-size: 2rem;
+    font-weight: 600;
     color: white;
 }
 
@@ -132,6 +147,7 @@ body{
     font-weight: 600;
     -webkit-text-stroke: white 1px;
     /* -webkit-text-stroke: white 1px; */
+    cursor: pointer;
 }
 .player-con .player:hover{
     font-size: 3rem;
@@ -167,6 +183,7 @@ body{
     z-index: 200;
     opacity: 0;
     transition-duration: 2s;
+    cursor: pointer;
 }
 .btn-home-con.logo-visible {
     opacity: 1;
@@ -195,6 +212,7 @@ body{
     color: white;
     border-bottom: 1px solid white;
     transition-duration: 1s;
+    cursor: pointer;
 }
 .year-con .year:hover{
     background: white;

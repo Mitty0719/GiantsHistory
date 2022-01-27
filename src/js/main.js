@@ -43,7 +43,7 @@ let currentYear = 2021;
 let currentPageState = 0;
 let currentY = 0; // 현재스크롤 위치
 let positionY = 0; // 이동해야하는 스크롤 위치
-let acc = 0.075; // 스크롤 속도
+let acc = 0.05; // 스크롤 속도
 
 function setYear(year){
     currentYear = year;

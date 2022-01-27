@@ -29,6 +29,9 @@ function App() {
       </figure>
       <div className='ground-wrap'>
         <div className='main-ground ground'>
+            <div className='btn-year-con' onClick={() => { setPageState(0)}}>
+              <h3>{currentYear}</h3>
+            </div>
             <div className='main-logo-con'>
                 <figure className='logo-img-con'>
                   <img src='/images/logo/logo-6.svg' alt='logo-img'></img>

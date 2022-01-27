@@ -1,3 +1,7 @@
+html{
+    /* scroll-behavior: smooth; */
+}
+
 body{
     font-family: 'Noto Sans KR', sans-serif;
     height: 100vh;
@@ -56,17 +60,18 @@ body{
     position: absolute;
     top: 50px;
     left: 50px;
-    transition-duration: 1s;
-    transform-origin: left top;
     cursor: pointer;
 }
-.btn-year-con:hover{
-    transform: scale(2);
+.btn-year-con:hover h3{
+    color: rgb(208, 0, 36);
+    -webkit-text-stroke: white 1px;
 }
 .btn-year-con h3{
     font-size: 2rem;
     font-weight: 600;
     color: white;
+    -webkit-text-stroke: rgb(208, 0, 36) 1px;
+    transition-duration: 1s;
 }
 
 .issue-ground {

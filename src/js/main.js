@@ -100,21 +100,20 @@ function scrollAnimation(){
     if(Math.abs(positionY - currentY) < 1){
         cancelAnimationFrame(reqId);
         executeSectionAnimation();
-        positionY = 0;
     }
     
 }
 function moveScroll(pageState){
     currentPageState = pageState;
-    setTimeout(()=>{
-        for(let i = 0; i < pageState; i++){
-            positionY += sectionInfo[i].sectionHeight;
-        }
-        currentY = window.scrollY;
+    positionY = 0;
+    for(let i = 0; i < pageState; i++){
+        positionY += sectionInfo[i].sectionHeight;
+    }
+    currentY = window.scrollY;
 
-        scrollAnimation();
-        setHomeBtnOpacity();
-    }, 100);
+    scrollAnimation();
+    setHomeBtnOpacity();
+    console.log(currentPageState, positionY);
 }
 
 function showIssueText(){

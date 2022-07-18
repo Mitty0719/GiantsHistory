@@ -1,13 +1,36 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+section{
+  width: 100vw;
+  height: 100vh;
+  background-color: #928372;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* -------------------- main-section -------------------- */
+.main-section{
+
+}
+
+/* -------------------- year-section -------------------- */
+.year-section{
+  
+}
+.year-list{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+.year-item{
+  
+}
+.year-item span{
+  font-size: 1.2rem;
+}
+
+/* -------------------- legend-section -------------------- */
+.legend-section{
+
+}
+/* -------------------- honor-section -------------------- */
+.honor-section{
+
 }

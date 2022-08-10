@@ -1,36 +1,60 @@
-section{
+section {
   width: 100vw;
   height: 100vh;
   background-color: #928372;
 }
 
 /* -------------------- main-section -------------------- */
-.main-section{
-
+.main-section {
+  background-color: #ccc;
 }
 
 /* -------------------- year-section -------------------- */
-.year-section{
-  
+.year-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
 }
-.year-list{
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+.year-section .year-wrap {
+  display: flex;
+  width: 1040px;
+  height: 580px;
+  background: red;
 }
-.year-item{
-  
+.year-section .year-wrap .year-list-con {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  flex: 4 1 0;
+  background: blue;
 }
-.year-item span{
-  font-size: 1.2rem;
+.year-section .year-wrap .year-list-con .year-list {
+  padding: 0 50px;
+}
+.year-section .year-wrap .year-list-con .year-list .year-item {
+  padding-left: 30px;
+  font-size: 32px;
+  line-height: 50px;
+  border-left: 3px solid #707070;
+}
+.year-section .year-wrap .year-content-con {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 6 1 0;
+  background: green;
+}
+.year-section .year-wrap .year-content-con .year-image-con {
+  flex: 2 1 0;
+  background: purple;
+}
+.year-section .year-wrap .year-content-con .year-desc-con {
+  flex: 1 1 0;
 }
 
 /* -------------------- legend-section -------------------- */
-.legend-section{
-
+.legend-section {
+  background-color: #999;
 }
-/* -------------------- honor-section -------------------- */
-.honor-section{
 
-}
+/* -------------------- honor-section -------------------- *//*# sourceMappingURL=index.css.map */

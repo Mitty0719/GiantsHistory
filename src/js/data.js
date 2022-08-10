@@ -23,7 +23,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const dbRef = ref(getDatabase(app));
 
-
 export function getArticle(year, handler){
   get(child(dbRef, `article/${year}`)).then((snapshot)=>{
     if(snapshot.exists()){
@@ -33,8 +32,16 @@ export function getArticle(year, handler){
     }
   }).catch((error)=>{
     console.log(error);
-  })
+  });
 }
-export function getPlayers(){
-  
+export function getPlayers(year, handler){
+  get(child(dbRef, `player/${year}`)).then((snapshot)=>{
+    if(snapshot.exists()){
+      handler(snapshot.val());
+    }else{
+      console.log('no data available');
+    }
+  }).catch((error)=>{
+    console.log(error);
+  });
 }

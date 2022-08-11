@@ -1,7 +1,35 @@
+body * {
+  font-family: "BM Hanna Pro", "BM Hanna Air";
+}
+
 section {
   width: 100vw;
   height: 100vh;
   background-color: #928372;
+}
+
+/* -------------------- common -------------------- */
+button {
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+}
+button.button-blue {
+  background-color: #062045;
+  color: #FFFFFF;
+}
+button.button-red {
+  background-color: #D00024;
+  color: #FFFFFF;
+}
+button.button-darkgray {
+  background-color: #333333;
+  color: #FFFFFF;
+}
+button.button-lightgray {
+  background-color: #DDDDDD;
+  color: #333333;
 }
 
 /* -------------------- main-section -------------------- */
@@ -49,7 +77,26 @@ section {
   background: purple;
 }
 .year-section .year-wrap .year-content-con .year-desc-con {
+  display: flex;
+  flex-flow: column nowrap;
   flex: 1 1 0;
+  padding: 0 15px;
+}
+.year-section .year-wrap .year-content-con .year-desc-con .year-title {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  font-size: 32px;
+}
+.year-section .year-wrap .year-content-con .year-desc-con .year-desc {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  font-size: 16px;
+}
+.year-section .year-wrap .year-content-con .year-desc-con .year-button-con {
+  margin-top: 20px;
+  text-align: right;
 }
 
 /* -------------------- legend-section -------------------- */

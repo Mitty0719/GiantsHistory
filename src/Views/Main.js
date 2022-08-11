@@ -34,10 +34,10 @@ function Main(props){
             <div className="year-image"></div>
           </div>
           <div className="year-desc-con">
-            <h4>2012</h4>
-            <p>lorem</p>
+            <h4 className="year-title">2012</h4>
+            <p className="year-desc">lorem</p>
             <div className="year-button-con">
-              <button className="year-button">바로가기</button>
+              <button className="button-blue">바로가기</button>
             </div>
           </div>
         </div>

@@ -1,11 +1,36 @@
 @import "./color.scss";
-
+body * {
+  font-family: 'BM Hanna Pro', 'BM Hanna Air';
+}
 section{
   width: 100vw;
   height: 100vh;
   background-color: #928372;
 }
-
+/* -------------------- common -------------------- */
+button{
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  
+  &.button-blue{
+    background-color: $p2;
+    color: $p3;
+  }
+  &.button-red{
+    background-color: $p1;
+    color: $p3;
+  }
+  &.button-darkgray{
+    background-color: $b2;
+    color: $p3;
+  }
+  &.button-lightgray{
+    background-color: $b5;
+    color: $b2;
+  }
+}
 /* -------------------- main-section -------------------- */
 .main-section{
   background-color: #ccc;
@@ -34,7 +59,7 @@ section{
           padding-left: 30px;
           font-size: 32px;
           line-height: 50px;
-          border-left: 3px solid $bc4;
+          border-left: 3px solid $b4;
         }
       }
     }
@@ -46,9 +71,31 @@ section{
       .year-image-con{
         flex: 2 1 0;
         background: purple;
+        .year-image{
+
+        }
       }
       .year-desc-con{
+        display: flex;
+        flex-flow: column nowrap;
         flex: 1 1 0;
+        padding: 0 15px;
+        .year-title{
+          display: flex;
+          align-items: center;
+          flex: 1 1 0;
+          font-size: 32px;
+        }
+        .year-desc{
+          display: flex;
+          align-items: center;
+          flex: 1 1 0;
+          font-size: 16px;
+        }
+        .year-button-con{
+          margin-top: 20px;
+          text-align:right;
+        }
       }
     }
   }

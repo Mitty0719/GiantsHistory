@@ -40,6 +40,7 @@ button.button-lightgray {
 /* -------------------- year-section -------------------- */
 .year-section {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   background-color: #fff;
@@ -48,14 +49,12 @@ button.button-lightgray {
   display: flex;
   width: 1040px;
   height: 580px;
-  background: red;
 }
 .year-section .year-wrap .year-list-con {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   flex: 4 1 0;
-  background: blue;
 }
 .year-section .year-wrap .year-list-con .year-list {
   padding: 0 50px;
@@ -70,7 +69,6 @@ button.button-lightgray {
   display: flex;
   flex-flow: column nowrap;
   flex: 6 1 0;
-  background: green;
 }
 .year-section .year-wrap .year-content-con .year-image-con {
   flex: 2 1 0;
@@ -97,6 +95,48 @@ button.button-lightgray {
 .year-section .year-wrap .year-content-con .year-desc-con .year-button-con {
   margin-top: 20px;
   text-align: right;
+}
+.year-section .emblem-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+}
+.year-section .emblem-wrap .emblem-list {
+  display: flex;
+  gap: 20px;
+}
+.year-section .emblem-wrap .emblem-list .emblem-item {
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: grayscale(1);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.year-section .emblem-wrap .emblem-list .emblem-item.emblem01 {
+  background-image: url("../../public/images/emblem/emblem-01.png");
+}
+.year-section .emblem-wrap .emblem-list .emblem-item.emblem02 {
+  background-image: url("../../public/images/emblem/emblem-02.png");
+}
+.year-section .emblem-wrap .emblem-list .emblem-item.emblem03 {
+  background-image: url("../../public/images/emblem/emblem-03.png");
+}
+.year-section .emblem-wrap .emblem-list .emblem-item.emblem04 {
+  background-image: url("../../public/images/emblem/emblem-04.png");
+}
+.year-section .emblem-wrap .emblem-list .emblem-item.emblem05 {
+  background-image: url("../../public/images/emblem/emblem-05.png");
+}
+.year-section .emblem-wrap .emblem-list .emblem-item.emblem06 {
+  background-image: url("../../public/images/emblem/emblem-06.png");
+}
+.year-section .emblem-wrap .emblem-list .emblem-item:hover {
+  filter: grayscale(0);
+  transform: translate(0, -5%);
 }
 
 /* -------------------- legend-section -------------------- */

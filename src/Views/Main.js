@@ -42,9 +42,14 @@ function Main(props){
           </div>
         </div>
       </article>
-      <div className="logo-list-con">
-        <ul className="logo-">
-          <li></li>
+      <div className="emblem-wrap">
+        <ul className="emblem-list">
+          <li className="emblem-item emblem01"></li>
+          <li className="emblem-item emblem02"></li>
+          <li className="emblem-item emblem03"></li>
+          <li className="emblem-item emblem04"></li>
+          <li className="emblem-item emblem05"></li>
+          <li className="emblem-item emblem06"></li>
         </ul>
       </div>
     </section>

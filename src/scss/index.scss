@@ -39,6 +39,7 @@ button{
 /* -------------------- year-section -------------------- */
 .year-section{
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   background-color: #fff;
@@ -46,13 +47,11 @@ button{
     display: flex;
     width: 1040px;
     height: 580px;
-    background: red;
     .year-list-con{
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
       flex: 4 1 0;
-      background: blue;
       .year-list{
         padding: 0 50px;
         .year-item{
@@ -67,7 +66,6 @@ button{
       display: flex;
       flex-flow: column nowrap;
       flex: 6 1 0;
-      background: green;
       .year-image-con{
         flex: 2 1 0;
         background: purple;
@@ -95,6 +93,39 @@ button{
         .year-button-con{
           margin-top: 20px;
           text-align:right;
+        }
+      }
+    }
+  }
+
+  .emblem-wrap{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    .emblem-list{
+      display: flex;
+      gap: 20px;
+      .emblem-item{
+        width: 80px;
+        height: 80px;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        filter: grayscale(1);
+        transition-duration: .5s;
+        cursor: pointer;
+
+        &.emblem01{ background-image: url('../../public/images/emblem/emblem-01.png'); }
+        &.emblem02{ background-image: url('../../public/images/emblem/emblem-02.png'); }
+        &.emblem03{ background-image: url('../../public/images/emblem/emblem-03.png'); }
+        &.emblem04{ background-image: url('../../public/images/emblem/emblem-04.png'); }
+        &.emblem05{ background-image: url('../../public/images/emblem/emblem-05.png'); }
+        &.emblem06{ background-image: url('../../public/images/emblem/emblem-06.png'); }
+
+        &:hover{
+          filter: grayscale(0);
+          transform: translate(0, -5%)
         }
       }
     }

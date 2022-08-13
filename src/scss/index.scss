@@ -134,8 +134,28 @@ button{
 
 /* -------------------- legend-section -------------------- */
 .legend-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #999;
 
+  .legend-wrap{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    .legend-image-con{
+      flex: 0.9 1 0;
+      background-color: #928372;
+      .legned-image{
+      }
+    }
+    .legend-desc-con{
+      flex: 1 1 0;
+      .legend-personal{
+
+      }
+    }
+  }
 }
 /* -------------------- honor-section -------------------- */
 .honor-section{

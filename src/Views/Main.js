@@ -1,5 +1,3 @@
-import Year from '../Components/Year.js';
-import Legend from './Legend.js';
 
 function Main(props){
 
@@ -54,9 +52,23 @@ function Main(props){
       </div>
     </section>
     <section className="legend-section">
-      <ul className="legend-list">
-        <Legend></Legend>
-      </ul>
+      <article className="legend-wrap">
+        <div className="legend-image-con">
+          <div className="legend-image"></div>
+        </div>
+        <div className="legend-desc-con">
+          <div className="legend-personal">
+            
+          </div>
+          <div className="legend-career-con">
+            <ul className="legend-career-list">
+              <li className="legend-career-item">
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
     </section>
     <section className="honor-section">
 

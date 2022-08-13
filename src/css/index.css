@@ -141,7 +141,21 @@ button.button-lightgray {
 
 /* -------------------- legend-section -------------------- */
 .legend-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #999;
 }
-
+.legend-section .legend-wrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.legend-section .legend-wrap .legend-image-con {
+  flex: 0.9 1 0;
+  background-color: #928372;
+}
+.legend-section .legend-wrap .legend-desc-con {
+  flex: 1 1 0;
+}
 /* -------------------- honor-section -------------------- *//*# sourceMappingURL=index.css.map */

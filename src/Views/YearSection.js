@@ -7,11 +7,11 @@ function YearSection(props){
   getPlayers(props.year, (data) => {players = data});
 
   return (
-    <>
+    <div>
     <ul>
       {setPlayer()}
     </ul>
-    </>
+    </div>
   );
 
 

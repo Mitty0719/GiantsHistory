@@ -1,4 +1,5 @@
 
+
 function Main(props){
 
   function clickYear(e){
@@ -57,18 +58,55 @@ function Main(props){
           <div className="legend-image"></div>
         </div>
         <div className="legend-desc-con">
-          <div className="legend-personal">
-            
+          <div className="legend-personal-con">
+            <div className="legend-personal-inner">
+              <h4 className="name">이대호</h4>
+              <h4 className="number">10</h4>
+            </div>
           </div>
           <div className="legend-career-con">
             <ul className="legend-career-list">
               <li className="legend-career-item">
-                
+                2006년 1루수 골든글러브
+              </li>
+              <li className="legend-career-item">
+                2006년 1루수 골든글러브
+              </li>
+              <li className="legend-career-item">
+                2006년 1루수 골든글러브
+              </li>
+              <li className="legend-career-item">
+                2006년 1루수 골든글러브
+              </li>
+              <li className="legend-career-item">
+                2006년 1루수 골든글러브
+              </li>
+              <li className="legend-career-item">
+                2006년 1루수 골든글러브
+              </li>
+              <li className="legend-career-item">
+                2006년 1루수 골든글러브
+              </li>
+              <li className="legend-career-item">
+                2006년 1루수 골든글러브
+              </li>
+              <li className="legend-career-item">
+                2006년 1루수 골든글러브
+              </li>
+              <li className="legend-career-item">
+                2006년 1루수 골든글러브
               </li>
             </ul>
           </div>
         </div>
       </article>
+      <div className="legend-control-con">
+        <ul className="legend-control-list">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </section>
     <section className="honor-section">
 

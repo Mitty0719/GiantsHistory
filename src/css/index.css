@@ -3,9 +3,9 @@ body * {
 }
 
 section {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #928372;
 }
 
 /* -------------------- common -------------------- */
@@ -144,7 +144,6 @@ button.button-lightgray {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #999;
 }
 .legend-section .legend-wrap {
   display: flex;
@@ -153,9 +152,64 @@ button.button-lightgray {
 }
 .legend-section .legend-wrap .legend-image-con {
   flex: 0.9 1 0;
-  background-color: #928372;
+  background-color: purple;
 }
 .legend-section .legend-wrap .legend-desc-con {
+  display: flex;
+  flex-flow: column nowrap;
   flex: 1 1 0;
+  padding: 100px;
 }
-/* -------------------- honor-section -------------------- *//*# sourceMappingURL=index.css.map */
+.legend-section .legend-wrap .legend-desc-con .legend-personal-con {
+  position: relative;
+  flex: 3 1 0;
+}
+.legend-section .legend-wrap .legend-desc-con .legend-personal-con .legend-personal-inner {
+  position: absolute;
+  bottom: 5rem;
+}
+.legend-section .legend-wrap .legend-desc-con .legend-personal-con .legend-personal-inner * {
+  display: inline;
+  float: left;
+  line-height: 4.5rem;
+}
+.legend-section .legend-wrap .legend-desc-con .legend-personal-con .legend-personal-inner .name {
+  font-size: 3rem;
+}
+.legend-section .legend-wrap .legend-desc-con .legend-personal-con .legend-personal-inner .number {
+  font-size: 4.5rem;
+  margin-left: 2rem;
+}
+.legend-section .legend-wrap .legend-desc-con .legend-career-con {
+  flex: 7 1 0;
+}
+.legend-section .legend-wrap .legend-desc-con .legend-career-con .legend-career-list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 100%;
+}
+.legend-section .legend-wrap .legend-desc-con .legend-career-con .legend-career-list .legend-career-item {
+  font-size: 1.875rem;
+}
+.legend-section .legend-control-con {
+  position: absolute;
+  bottom: 72px;
+  right: 72px;
+}
+.legend-section .legend-control-con .legend-control-list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+}
+.legend-section .legend-control-con .legend-control-list li {
+  width: 24px;
+  height: 24px;
+  border-radius: 14px;
+  background-color: #DDDDDD;
+}
+
+/* -------------------- honor-section -------------------- */
+.honor-section {
+  background-color: #ccc;
+}/*# sourceMappingURL=index.css.map */

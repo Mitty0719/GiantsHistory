@@ -3,9 +3,9 @@ body * {
   font-family: 'BM Hanna Pro', 'BM Hanna Air';
 }
 section{
+  position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #928372;
 }
 /* -------------------- common -------------------- */
 button{
@@ -137,7 +137,6 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #999;
 
   .legend-wrap{
     display: flex;
@@ -145,19 +144,74 @@ button{
     height: 100%;
     .legend-image-con{
       flex: 0.9 1 0;
-      background-color: #928372;
+      background-color: purple;
       .legned-image{
       }
     }
     .legend-desc-con{
+      display: flex;
+      flex-flow: column nowrap;
       flex: 1 1 0;
-      .legend-personal{
+      padding: 100px;
 
+      .legend-personal-con{
+        position: relative;
+        flex: 3 1 0;
+
+        .legend-personal-inner{
+          position: absolute;
+          bottom: 5rem;
+
+          *{
+            display: inline;
+            float: left;
+            line-height: 4.5rem;
+          }
+
+          .name{
+            font-size: 3rem;
+          }
+          .number{
+            font-size: 4.5rem;
+            margin-left: 2rem;
+          }
+        }
+      }
+      .legend-career-con{
+        flex: 7 1 0;
+
+        .legend-career-list{
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          height: 100%;
+          
+          .legend-career-item{
+            font-size: 1.875rem;
+          }
+        }
+      }
+    }
+  }
+
+  .legend-control-con{
+    position: absolute;
+    bottom: 72px;
+    right: 72px;
+    .legend-control-list{
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 20px;
+      li{
+        width: 24px;
+        height: 24px;
+        border-radius: 14px;
+        background-color: $b5;
       }
     }
   }
 }
 /* -------------------- honor-section -------------------- */
 .honor-section{
-
+  background-color: #ccc;
 }

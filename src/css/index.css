@@ -137,7 +137,10 @@ button.button-lightgray {
 }
 .year-section .emblem-wrap .emblem-list .emblem-item:hover {
   filter: grayscale(0);
-  transform: translate(0, -5%);
+}
+.year-section .emblem-wrap .emblem-list .emblem-item.selected {
+  filter: grayscale(0);
+  transform: translate(0, -10%);
 }
 
 /* -------------------- legend-section -------------------- */

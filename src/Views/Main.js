@@ -1,10 +1,14 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { getYears } from '../js/data';
 
 function Main(props){
 
-  const [selectedEmblem, setSelectedEmblem] = useState('emblem01');
+  const [selectedEmblem, setSelectedEmblem] = useState('emblem06');
   const [yearDom, setYearDom] = useState([]);
+
+  useEffect(() => {
+    changeYears();
+  })
 
   function clickYear(e){
     let target = e.target;
@@ -60,12 +64,12 @@ function Main(props){
       </article>
       <div className="emblem-wrap">
         <ul className="emblem-list">
-          <li className="emblem-item emblem01" onClick={() => clickEmblem('emblem01')}></li>
-          <li className="emblem-item emblem02" onClick={() => clickEmblem('emblem02')}></li>
-          <li className="emblem-item emblem03" onClick={() => clickEmblem('emblem03')}></li>
-          <li className="emblem-item emblem04" onClick={() => clickEmblem('emblem04')}></li>
-          <li className="emblem-item emblem05" onClick={() => clickEmblem('emblem05')}></li>
-          <li className="emblem-item emblem06" onClick={() => clickEmblem('emblem06')}></li>
+          <li className={"emblem-item emblem01 " + (selectedEmblem === 'emblem01' ? 'selected' : '')} onClick={() => clickEmblem('emblem01')}></li>
+          <li className={"emblem-item emblem02 " + (selectedEmblem === 'emblem02' ? 'selected' : '')} onClick={() => clickEmblem('emblem02')}></li>
+          <li className={"emblem-item emblem03 " + (selectedEmblem === 'emblem03' ? 'selected' : '')} onClick={() => clickEmblem('emblem03')}></li>
+          <li className={"emblem-item emblem04 " + (selectedEmblem === 'emblem04' ? 'selected' : '')} onClick={() => clickEmblem('emblem04')}></li>
+          <li className={"emblem-item emblem05 " + (selectedEmblem === 'emblem05' ? 'selected' : '')} onClick={() => clickEmblem('emblem05')}></li>
+          <li className={"emblem-item emblem06 " + (selectedEmblem === 'emblem06' ? 'selected' : '')} onClick={() => clickEmblem('emblem06')}></li>
         </ul>
       </div>
     </section>

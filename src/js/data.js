@@ -45,3 +45,14 @@ export function getPlayers(year, handler){
     console.log(error);
   });
 }
+export async function getYears(emblem, handler){
+  await get(child(dbRef, `emblem/${emblem}`)).then((snapshot)=>{
+    if(snapshot.exists()){
+      handler(snapshot.val());
+    }else{
+      console.log('no data available');
+    }
+  }).catch((error)=>{
+    console.log(error);
+  });
+}

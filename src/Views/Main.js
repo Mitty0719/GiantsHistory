@@ -1,6 +1,10 @@
-
+import { useState, useRef } from 'react';
+import { getYears } from '../js/data';
 
 function Main(props){
+
+  const [selectedEmblem, setSelectedEmblem] = useState('emblem01');
+  const [yearDom, setYearDom] = useState([]);
 
   function clickYear(e){
     let target = e.target;
@@ -13,6 +17,22 @@ function Main(props){
     }
     props.setYear(target.querySelector('span').textContent);
   }
+
+  function clickEmblem(emblem){
+    setSelectedEmblem(emblem);
+    changeYears();
+  }
+
+  async function changeYears(){
+    let years;
+    let yearDummy = [];
+    await getYears(selectedEmblem, (data) => years = data );
+
+    for(let year of years){
+      yearDummy.push((<li key={year} className="year-item">{year}</li>));
+    }
+    setYearDom(yearDummy);
+  }
   
   return (
     <>
@@ -22,10 +42,7 @@ function Main(props){
       <article className="year-wrap">
         <div className="year-list-con">
           <ul className="year-list">
-            <li className="year-item">2011</li>
-            <li className="year-item">2012</li>
-            <li className="year-item">2013</li>
-            <li className="year-item">2014</li>
+            {yearDom}
           </ul>
         </div>
         <div className="year-content-con">
@@ -43,12 +60,12 @@ function Main(props){
       </article>
       <div className="emblem-wrap">
         <ul className="emblem-list">
-          <li className="emblem-item emblem01"></li>
-          <li className="emblem-item emblem02"></li>
-          <li className="emblem-item emblem03"></li>
-          <li className="emblem-item emblem04"></li>
-          <li className="emblem-item emblem05"></li>
-          <li className="emblem-item emblem06"></li>
+          <li className="emblem-item emblem01" onClick={() => clickEmblem('emblem01')}></li>
+          <li className="emblem-item emblem02" onClick={() => clickEmblem('emblem02')}></li>
+          <li className="emblem-item emblem03" onClick={() => clickEmblem('emblem03')}></li>
+          <li className="emblem-item emblem04" onClick={() => clickEmblem('emblem04')}></li>
+          <li className="emblem-item emblem05" onClick={() => clickEmblem('emblem05')}></li>
+          <li className="emblem-item emblem06" onClick={() => clickEmblem('emblem06')}></li>
         </ul>
       </div>
     </section>

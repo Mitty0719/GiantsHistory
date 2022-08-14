@@ -57,7 +57,8 @@ button.button-lightgray {
   flex: 4 1 0;
 }
 .year-section .year-wrap .year-list-con .year-list {
-  padding: 0 50px;
+  margin: 150px 50px;
+  overflow-y: scroll;
 }
 .year-section .year-wrap .year-list-con .year-list .year-item {
   padding-left: 30px;

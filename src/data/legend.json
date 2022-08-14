@@ -1,0 +1,50 @@
+{
+  "legend11": {
+    "name": "최동원",
+    "number": "11",
+    "career": [
+      { "year": "", "title": "단일시즌 최다 탈삼진 1위(~2020)" },
+      { "year": "", "title": "한국시리즈 5등판 4승" },
+      { "year": "1981", "title": "신인왕" },
+      { "year": "1981", "title": "다승왕" },
+      { "year": "1981", "title": "MVP" },
+      { "year": "1984", "title": "다승왕" },
+      { "year": "1984", "title": "탈삼진왕" },
+      { "year": "1984", "title": "골든글러브" },
+      { "year": "1984", "title": "MVP" },
+      { "year": "1987", "title": "탈삼진왕" }
+    ]
+  },
+  "legend10": {
+    "name": "이대호",
+    "number": "10",
+    "career": [
+      { "year": "2006", "title": "1루수 골든글러브" },
+      { "year": "2006", "title": "트리플크라운" },
+      { "year": "2007", "title": "1루수 골든글러브" },
+      { "year": "2010", "title": "3루수 골든글러브" },
+      { "year": "2010", "title": "MVP" },
+      { "year": "2010", "title": "트리플크라운" },
+      { "year": "2010", "title": "유일무이 타격 7관왕" },
+      { "year": "2011", "title": "1루수 골든글러브" },
+      { "year": "2017", "title": "1루수 골든글러브" },
+      { "year": "2018", "title": "지명타자 골든글러브" }
+    ]
+  },
+  "legend100": {
+    "name": "조지훈",
+    "number": "100",
+    "career": [
+      { "year": "", "title": "" },
+      { "year": "", "title": "" },
+      { "year": "", "title": "" },
+      { "year": "", "title": "" },
+      { "year": "", "title": "" },
+      { "year": "", "title": "" },
+      { "year": "", "title": "" },
+      { "year": "", "title": "" },
+      { "year": "", "title": "" },
+      { "year": "", "title": "" }
+    ]
+  }
+}

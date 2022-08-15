@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { getYears } from '../js/data';
+import Title from '../Components/Title'
 
 function Main(props){
 
@@ -42,6 +43,7 @@ function Main(props){
     <>
     <section className="main-section">
     </section>
+    <Title text="Giant's Years"/>
     <section className="year-section">
       <article className="year-wrap">
         <div className="year-list-con">
@@ -73,6 +75,7 @@ function Main(props){
         </ul>
       </div>
     </section>
+    <Title text="Giant's Legend"/>
     <section className="legend-section">
       <article className="legend-wrap">
         <div className="legend-image-con">
@@ -129,6 +132,7 @@ function Main(props){
         </ul>
       </div>
     </section>
+    <Title text="Giant's Signature"/>
     <section className="honor-section">
 
     </section>

@@ -8,6 +8,30 @@ section {
   height: 100vh;
 }
 
+.title-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 900px;
+}
+.title-wrap .title-con {
+  display: flex;
+  transform: translateY(500%);
+}
+.title-wrap .title-con h4 {
+  font-size: 2rem;
+  line-height: 2rem;
+  padding: 0 25px;
+}
+.title-wrap .title-con::before, .title-wrap .title-con::after {
+  display: block;
+  content: "";
+  width: 25px;
+  height: 1rem;
+  border-bottom: 2px solid #000000;
+}
+
 /* -------------------- common -------------------- */
 button {
   width: 120px;

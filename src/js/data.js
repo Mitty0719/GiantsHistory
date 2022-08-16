@@ -56,3 +56,14 @@ export async function getYears(emblem, handler){
     console.log(error);
   });
 }
+export async function getLegend(number, handler){
+  await get(child(dbRef, `legend/${number}`)).then((snapshot)=>{
+    if(snapshot.exists()){
+      handler(snapshot.val());
+    }else{
+      console.log('no data available');
+    }
+  }).catch((error)=>{
+    console.log(error);
+  });
+}

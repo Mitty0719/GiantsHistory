@@ -1,11 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
-import { getYears } from '../js/data';
+import { getYears, getLegend } from '../js/data';
 import Title from '../Components/Title'
 
 function Main(props){
 
   const [selectedEmblem, setSelectedEmblem] = useState('emblem06');
   const [yearDom, setYearDom] = useState([]);
+  const [selectedLegend, setSelectedLegend] = useState('10');
+  const [legendName, setLegendName] = useState();
+  const [legendNumber, setLegendNumber] = useState();
+  const [legendCareerDom, setLegendCareerDom] = useState();
 
   useEffect(() => {
     changeYears();
@@ -27,6 +31,10 @@ function Main(props){
     setSelectedEmblem(emblem);
     changeYears();
   }
+  function clickLegendControl(number){
+    setSelectedLegend(number);
+    changeLegend();
+  }
 
   async function changeYears(){
     let years;
@@ -37,6 +45,24 @@ function Main(props){
       yearDummy.push((<li key={year} className="year-item">{year}</li>));
     }
     setYearDom(yearDummy);
+  }
+  async function changeLegend(){
+    let legend;
+    let legendDummy = [];
+    await getLegend(selectedLegend, (data) => legend = data);
+
+    setLegendName(legend.name);
+    setLegendNumber(legend.number);
+    for(let career of legend.career){
+      if(!career) continue;
+      legendDummy.push((
+      <li key={career.id} className="legend-career-item">{
+        (career.year ? `${career.year}년 ` : '') + `${career.title}`
+      }</li>
+      ));
+    }
+
+    setLegendCareerDom(legendDummy);
   }
   
   return (
@@ -84,51 +110,22 @@ function Main(props){
         <div className="legend-desc-con">
           <div className="legend-personal-con">
             <div className="legend-personal-inner">
-              <h4 className="name">이대호</h4>
-              <h4 className="number">10</h4>
+              <h4 className="name">{legendName}</h4>
+              <h4 className="number">{legendNumber}</h4>
             </div>
           </div>
           <div className="legend-career-con">
             <ul className="legend-career-list">
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
-              <li className="legend-career-item">
-                2006년 1루수 골든글러브
-              </li>
+              {legendCareerDom}
             </ul>
           </div>
         </div>
       </article>
       <div className="legend-control-con">
         <ul className="legend-control-list">
-          <li></li>
-          <li></li>
-          <li></li>
+          <li onClick={() => clickLegendControl('11')}></li>
+          <li onClick={() => clickLegendControl('10')}></li>
+          <li onClick={() => clickLegendControl('V3')}></li>
         </ul>
       </div>
     </section>

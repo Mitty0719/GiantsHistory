@@ -1,19 +1,20 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo} from 'react';
 import { getYears, getLegend } from '../js/data';
 import Title from '../Components/Title'
 
 function Main(props){
 
   const [selectedEmblem, setSelectedEmblem] = useState('emblem06');
-  const [yearDom, setYearDom] = useState([]);
-  const [selectedLegend, setSelectedLegend] = useState('10');
-  const [legendName, setLegendName] = useState();
-  const [legendNumber, setLegendNumber] = useState();
-  const [legendCareerDom, setLegendCareerDom] = useState();
+  const [selectedLegend, setSelectedLegend] = useState('11');
+  const [emblemYears, setEmblemYears] = useState();
+  const [legendCareer, setLegendCareer] = useState();
+  const legendName = useRef('legendName');
+  const legendNumber = useRef('legendNumber');
 
   useEffect(() => {
     changeYears();
-  })
+    changeLegend();
+  }, [selectedEmblem, selectedLegend]);
 
   function clickYear(e){
     let target = e.target;
@@ -29,11 +30,9 @@ function Main(props){
 
   function clickEmblem(emblem){
     setSelectedEmblem(emblem);
-    changeYears();
   }
   function clickLegendControl(number){
     setSelectedLegend(number);
-    changeLegend();
   }
 
   async function changeYears(){
@@ -44,15 +43,13 @@ function Main(props){
     for(let year of years){
       yearDummy.push((<li key={year} className="year-item">{year}</li>));
     }
-    setYearDom(yearDummy);
+    setEmblemYears(yearDummy);
   }
   async function changeLegend(){
     let legend;
     let legendDummy = [];
     await getLegend(selectedLegend, (data) => legend = data);
 
-    setLegendName(legend.name);
-    setLegendNumber(legend.number);
     for(let career of legend.career){
       if(!career) continue;
       legendDummy.push((
@@ -62,8 +59,14 @@ function Main(props){
       ));
     }
 
-    setLegendCareerDom(legendDummy);
+    legendName.current.innerText = legend.name;
+    legendNumber.current.innerText = legend.number;
+
+    setLegendCareer(legendDummy);
   }
+
+  // useMemo(changeYears, [selectedEmblem]);
+  // useMemo(changeLegend, [selectedLegend]);
   
   return (
     <>
@@ -74,7 +77,7 @@ function Main(props){
       <article className="year-wrap">
         <div className="year-list-con">
           <ul className="year-list">
-            {yearDom}
+            {emblemYears}
           </ul>
         </div>
         <div className="year-content-con">
@@ -110,22 +113,22 @@ function Main(props){
         <div className="legend-desc-con">
           <div className="legend-personal-con">
             <div className="legend-personal-inner">
-              <h4 className="name">{legendName}</h4>
-              <h4 className="number">{legendNumber}</h4>
+              <h4 className="name" ref={legendName}></h4>
+              <h4 className="number" ref={legendNumber}></h4>
             </div>
           </div>
           <div className="legend-career-con">
             <ul className="legend-career-list">
-              {legendCareerDom}
+              {legendCareer}
             </ul>
           </div>
         </div>
       </article>
       <div className="legend-control-con">
         <ul className="legend-control-list">
-          <li onClick={() => clickLegendControl('11')}></li>
-          <li onClick={() => clickLegendControl('10')}></li>
-          <li onClick={() => clickLegendControl('V3')}></li>
+          <li className={selectedLegend === '11' ? 'selected' : ''} onClick={() => clickLegendControl('11')}></li>
+          <li className={selectedLegend === '10' ? 'selected' : ''} onClick={() => clickLegendControl('10')}></li>
+          <li className={selectedLegend === 'V3' ? 'selected' : ''} onClick={() => clickLegendControl('V3')}></li>
         </ul>
       </div>
     </section>

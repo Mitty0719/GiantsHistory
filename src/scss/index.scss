@@ -235,6 +235,10 @@ button{
         height: 24px;
         border-radius: 14px;
         background-color: $b5;
+
+        &.selected{
+          background-color: $b2;
+        }
       }
     }
   }

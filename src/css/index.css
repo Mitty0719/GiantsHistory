@@ -236,6 +236,9 @@ button.button-lightgray {
   border-radius: 14px;
   background-color: #DDDDDD;
 }
+.legend-section .legend-control-con .legend-control-list li.selected {
+  background-color: #333333;
+}
 
 /* -------------------- honor-section -------------------- */
 .honor-section {

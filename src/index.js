@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/reset.css';
 import './css/index.css';
+import './css/yearSection.css';
+import './css/components.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

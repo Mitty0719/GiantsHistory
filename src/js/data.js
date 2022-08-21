@@ -34,8 +34,8 @@ export function getArticle(year, handler){
     console.log(error);
   });
 }
-export function getPlayers(year, handler){
-  get(child(dbRef, `player/${year}`)).then((snapshot)=>{
+export async function getPlayers(year, handler){
+  await get(child(dbRef, `player/${year}`)).then((snapshot)=>{
     if(snapshot.exists()){
       handler(snapshot.val());
     }else{

@@ -28,13 +28,6 @@ function Main(props){
     props.setYear(target.querySelector('span').textContent);
   }
 
-  function clickEmblem(emblem){
-    setSelectedEmblem(emblem);
-  }
-  function clickLegendControl(number){
-    setSelectedLegend(number);
-  }
-
   async function changeYears(){
     let years;
     let yearDummy = [];
@@ -64,9 +57,6 @@ function Main(props){
 
     setLegendCareer(legendDummy);
   }
-
-  // useMemo(changeYears, [selectedEmblem]);
-  // useMemo(changeLegend, [selectedLegend]);
   
   return (
     <>
@@ -95,12 +85,12 @@ function Main(props){
       </article>
       <div className="emblem-wrap">
         <ul className="emblem-list">
-          <li className={"emblem-item emblem01 " + (selectedEmblem === 'emblem01' ? 'selected' : '')} onClick={() => clickEmblem('emblem01')}></li>
-          <li className={"emblem-item emblem02 " + (selectedEmblem === 'emblem02' ? 'selected' : '')} onClick={() => clickEmblem('emblem02')}></li>
-          <li className={"emblem-item emblem03 " + (selectedEmblem === 'emblem03' ? 'selected' : '')} onClick={() => clickEmblem('emblem03')}></li>
-          <li className={"emblem-item emblem04 " + (selectedEmblem === 'emblem04' ? 'selected' : '')} onClick={() => clickEmblem('emblem04')}></li>
-          <li className={"emblem-item emblem05 " + (selectedEmblem === 'emblem05' ? 'selected' : '')} onClick={() => clickEmblem('emblem05')}></li>
-          <li className={"emblem-item emblem06 " + (selectedEmblem === 'emblem06' ? 'selected' : '')} onClick={() => clickEmblem('emblem06')}></li>
+          <li className={"emblem-item emblem01 " + (selectedEmblem === 'emblem01' ? 'selected' : '')} onClick={() => setSelectedEmblem('emblem01')}></li>
+          <li className={"emblem-item emblem02 " + (selectedEmblem === 'emblem02' ? 'selected' : '')} onClick={() => setSelectedEmblem('emblem02')}></li>
+          <li className={"emblem-item emblem03 " + (selectedEmblem === 'emblem03' ? 'selected' : '')} onClick={() => setSelectedEmblem('emblem03')}></li>
+          <li className={"emblem-item emblem04 " + (selectedEmblem === 'emblem04' ? 'selected' : '')} onClick={() => setSelectedEmblem('emblem04')}></li>
+          <li className={"emblem-item emblem05 " + (selectedEmblem === 'emblem05' ? 'selected' : '')} onClick={() => setSelectedEmblem('emblem05')}></li>
+          <li className={"emblem-item emblem06 " + (selectedEmblem === 'emblem06' ? 'selected' : '')} onClick={() => setSelectedEmblem('emblem06')}></li>
         </ul>
       </div>
     </section>
@@ -126,9 +116,9 @@ function Main(props){
       </article>
       <div className="legend-control-con">
         <ul className="legend-control-list">
-          <li className={selectedLegend === '11' ? 'selected' : ''} onClick={() => clickLegendControl('11')}></li>
-          <li className={selectedLegend === '10' ? 'selected' : ''} onClick={() => clickLegendControl('10')}></li>
-          <li className={selectedLegend === 'V3' ? 'selected' : ''} onClick={() => clickLegendControl('V3')}></li>
+          <li className={selectedLegend === '11' ? 'selected' : ''} onClick={() => setSelectedLegend('11')}></li>
+          <li className={selectedLegend === '10' ? 'selected' : ''} onClick={() => setSelectedLegend('10')}></li>
+          <li className={selectedLegend === 'V3' ? 'selected' : ''} onClick={() => setSelectedLegend('V3')}></li>
         </ul>
       </div>
     </section>

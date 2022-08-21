@@ -1,0 +1,23 @@
+/* -------------------- PlayerCard -------------------- */
+.player-card{
+  position: relative;
+  width: 150px;
+  height: 650px;
+  background-color: #ccc;
+  .player-personal-con{
+    display: flex;
+    position: absolute;
+    flex-flow: column nowrap;
+    bottom: 1.5rem;
+    left: 1rem;
+    gap: 1rem;
+    .name{
+      font-size: 3rem;
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+    }
+    .position{
+      font-size: 3rem;
+    }
+  }
+}

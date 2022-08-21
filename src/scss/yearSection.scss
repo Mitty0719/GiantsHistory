@@ -1,0 +1,42 @@
+/* -------------------- year-content-con -------------------- */
+
+.year-content-con{
+  display: flex;
+  .year-image-con{
+    flex: 11 1 0;
+    background-color: green;
+  }
+  .year-desc-con{
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 8 1 0;
+    padding: 130px;
+    .year-desc-title-con{
+      position: relative;
+      flex: 1 1 0;
+      .year-desc-title{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 3rem;
+      }
+    }
+    .year-desc-content-con{
+      flex: 4 1 0;
+      .year-desc-content{
+        padding: 2rem 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.year-player-con{
+  .player-list-con{
+    display: inline-block;
+    padding: 110px;
+    .player-list{
+      display: flex;
+      gap: 10px;
+    }
+  }
+}

@@ -23,8 +23,8 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const dbRef = ref(getDatabase(app));
 
-export function getArticle(year, handler){
-  get(child(dbRef, `article/${year}`)).then((snapshot)=>{
+export async function getArticle(year, handler){
+  await get(child(dbRef, `article/${year}`)).then((snapshot)=>{
     if(snapshot.exists()){
       handler(snapshot.val());
     }else{

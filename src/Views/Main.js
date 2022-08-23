@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect, useMemo} from 'react';
-import { getYears, getLegend } from '../js/data';
+import { getYears, getLegend, getArticle } from '../js/data';
 import Title from '../Components/Title'
 
 function Main(props){
 
   const [selectedEmblem, setSelectedEmblem] = useState('emblem06');
   const [selectedLegend, setSelectedLegend] = useState('11');
+  const [selectedYear, setSelectedYear] = useState();
+  const [selectedYearDesc, setSelectedYearDesc] = useState();
   const [emblemYears, setEmblemYears] = useState();
   const [legendCareer, setLegendCareer] = useState();
   const legendName = useRef('legendName');
@@ -14,18 +16,16 @@ function Main(props){
   useEffect(() => {
     changeYears();
     changeLegend();
-  }, [selectedEmblem, selectedLegend]);
+    changeYear();
+  }, [selectedEmblem, selectedLegend, selectedYear]);
 
-  function clickYear(e){
-    let target = e.target;
-    // event bubbling
-    while(target.className !== 'year-item'){
-      if(target === document.body){
-        return;
-      }
-      target = target.parentNode;
-    }
-    props.setYear(target.querySelector('span').textContent);
+  async function changeYear(e){
+    let article;
+    await getArticle(selectedYear, (data) => article = data);
+    console.log(article);
+    setSelectedYearDesc(article.content);
+    // yearImage className 추가
+    
   }
 
   async function changeYears(){
@@ -34,7 +34,7 @@ function Main(props){
     await getYears(selectedEmblem, (data) => years = data );
 
     for(let year of years){
-      yearDummy.push((<li key={year} className="year-item">{year}</li>));
+      yearDummy.push((<li key={year} className="year-item" onClick={(e) => setSelectedYear(e.target.innerText)}>{year}</li>));
     }
     setEmblemYears(yearDummy);
   }
@@ -75,8 +75,8 @@ function Main(props){
             <div className="year-image"></div>
           </div>
           <div className="year-desc-con">
-            <h4 className="year-title">2012</h4>
-            <p className="year-desc">lorem</p>
+            <h4 className="year-title">{selectedYear}</h4>
+            <p className="year-desc">{selectedYearDesc}</p>
             <div className="year-button-con">
               <button className="button-blue">바로가기</button>
             </div>
